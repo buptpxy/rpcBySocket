@@ -23,7 +23,7 @@ public class SocketRpcClient {
         }
         InvocationHandler handler = new ServiceProxy<>(interfaceType);
         UserService userService = (UserService) Proxy.newProxyInstance(interfaceType.getClassLoader(), new Class[]{interfaceType}, handler);
-        Object object = userService.getUserInfo(1);
+        Object object = userService.getUserInfo(1);//像调用自己服务的方法一样直接调用rpcserver服务的方法
         System.out.println(object);
     }
 

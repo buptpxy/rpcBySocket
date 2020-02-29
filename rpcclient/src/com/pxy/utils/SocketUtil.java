@@ -30,9 +30,6 @@ public class SocketUtil {
 
             Object resultObj = input.readObject(); //这里使用input.readUTF()会接收不到rpcclient发过来的字符串
             result = (Result)resultObj;
-//            String resultStr = (String)resultObj;
-//            result = JSON.parseObject(resultStr,Result.class);
-
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             result = Result.getFailResult("调用远程方法失败");
