@@ -3,6 +3,7 @@ package com.pxy.rpc;
 import java.io.Serializable;
 
 public class Result implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Boolean success;
     private String message;
     private String resultType;
@@ -27,16 +28,31 @@ public class Result implements Serializable {
         return success;
     }
 
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+
     public String getMessage() {
         return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getResultType() {
         return resultType;
     }
 
+    public void setResultType(String resultType) {
+        this.resultType = resultType;
+    }
+
     public String getResultValue() {
         return resultValue;
     }
 
+    public void setResultValue(String resultValue) {
+        this.resultValue = resultValue;
+    }
 }

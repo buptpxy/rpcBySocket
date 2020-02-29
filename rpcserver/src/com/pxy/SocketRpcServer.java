@@ -30,7 +30,8 @@ public class SocketRpcServer {
 
                 Result result = RpcUtil.getServerResult(rpcParam);
                 output = new ObjectOutputStream(socket.getOutputStream());
-                output.writeObject(JSON.toJSONString(result)); //这里使用output.writeUTF会使rpcclient接收不到发过去的字符串
+//                output.writeObject(JSON.toJSONString(result)); //这里使用output.writeUTF会使rpcclient接收不到发过去的字符串
+                output.writeObject(result);
             }
         } catch (Exception e) {
             e.printStackTrace();
